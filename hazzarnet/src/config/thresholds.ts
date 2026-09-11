@@ -11,10 +11,10 @@ export const MAX_SENSOR_HEIGHT_CM = 45;
  * - Critical: >= 35 cm depth (critical flood / overflow)
  */
 export const WATER_DEPTH_THRESHOLDS: WaterDepthThresholds = {
-  normalMaxDepth: 15,    // Depth < 15cm = NORMAL
+  normalMaxDepth: 10,    // Depth < 10cm = NORMAL
   watchMaxDepth: 25,     // Depth 15-25cm = WATCH
   warningMaxDepth: 35,   // Depth 25-35cm = WARNING
-  criticalMinDepth: 35,  // Depth >= 35cm = CRITICAL FLOOD
+  criticalMinDepth: 40,  // Depth >= 40cm = CRITICAL FLOOD
 };
 
 /**

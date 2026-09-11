@@ -6,7 +6,7 @@ import { fetchLatestReadings, subscribeToSensorReadings, postSensorReading } fro
 import { DEFAULT_NODE_INFO, distanceToWaterDepth } from '../config/thresholds';
 
 export const useSensorData = () => {
-  const [isMockMode, setIsMockMode] = useState<boolean>(true);
+  const [isMockMode, setIsMockMode] = useState<boolean>(false);
   const [readingsHistory, setReadingsHistory] = useState<SensorReading[]>(() => generateInitialMockBuffer(35));
   const [alerts, setAlerts] = useState<AlertItem[]>([]);
   const [secondsAgo, setSecondsAgo] = useState<number>(0);
@@ -19,7 +19,7 @@ export const useSensorData = () => {
     sensorActive: true,
     databaseConnected: isSupabaseConfigured(),
     dataStreamLive: true,
-    mockMode: true,
+    mockMode: false,
   });
 
   const latestReading = readingsHistory.length > 0 ? readingsHistory[readingsHistory.length - 1] : null;
